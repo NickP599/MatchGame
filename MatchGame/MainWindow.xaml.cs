@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Windows;
+using System.Windows.Threading;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -13,10 +14,27 @@ namespace MatchGame
 {
     public partial class MainWindow : Window
     {
+        private TextBlock lastClickedTextBlock;
+        private DispatcherTimer timer = new DispatcherTimer();
+
+        private  int tenthsOfSecondsElapsed;
+        private int matchesFound;
+
+        private bool findingMatch = false;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            timer.Interval = TimeSpan.FromSeconds(.1);
+            timer.Tick += Timer_Tick;
+
             SetUpGame();
+        }
+
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void SetUpGame()
@@ -45,6 +63,27 @@ namespace MatchGame
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            TextBlock textBlock = sender as TextBlock;
+
+
+            if (textBlock == null) return;
+
+            if (!findingMatch)
+            {
+                textBlock.Visibility = Visibility.Hidden;
+                lastClickedTextBlock = textBlock;
+                findingMatch = true;
+            }
+            else if(textBlock.Text ==  lastClickedTextBlock.Text)
+            {
+                textBlock.Visibility = Visibility.Hidden;
+                findingMatch= false;
+            }
+            else
+            {
+                lastClickedTextBlock.Visibility = Visibility.Visible;
+                findingMatch= false;
+            }
 
         }
     }
