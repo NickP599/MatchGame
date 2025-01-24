@@ -78,14 +78,14 @@ Grid.Row="1"
 Text="?"
 VerticalAlignment="Center" 
 RenderTransformOrigin="0.507,2.258" FontSize="36" MouseDown="TextBlock_MouseDown"/>
-        
+
         <TextBlock Grid.Column="3"
             HorizontalAlignment="Center" 
             Grid.Row="2" 
             Text="?"
             VerticalAlignment="Center" 
             RenderTransformOrigin="0.507,2.258" FontSize="36" MouseDown="TextBlock_MouseDown"/>
-        
+
         <TextBlock Grid.Column="2"
             HorizontalAlignment="Center" 
             Grid.Row="2" 
@@ -134,5 +134,8 @@ RenderTransformOrigin="0.507,2.258" FontSize="36" MouseDown="TextBlock_MouseDown
     Text="?"
     VerticalAlignment="Center" 
     RenderTransformOrigin="0.507,2.258" FontSize="36" MouseDown="TextBlock_MouseDown"/>
+
+        <TextBlock x:Name="timeTextBlock" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" Grid.ColumnSpan="4" FontSize="36" VerticalAlignment="Top" FontFamily="Segoe UI" MouseDown="TimeTextBlock_MouseDown" Text="Elapsed time
+"/>
     </Grid>
 </Window>
