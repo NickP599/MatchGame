@@ -135,7 +135,6 @@ RenderTransformOrigin="0.507,2.258" FontSize="36" MouseDown="TextBlock_MouseDown
     VerticalAlignment="Center" 
     RenderTransformOrigin="0.507,2.258" FontSize="36" MouseDown="TextBlock_MouseDown"/>
 
-        <TextBlock x:Name="timeTextBlock" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" Grid.ColumnSpan="4" FontSize="36" VerticalAlignment="Top" FontFamily="Segoe UI" MouseDown="TimeTextBlock_MouseDown" Text="Elapsed time
-"/>
+        <TextBlock x:Name="timeTextBlock" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" Grid.ColumnSpan="4" FontSize="36" VerticalAlignment="Top" FontFamily="Segoe UI" MouseDown="TimeTextBlock_MouseDown" Text="Elapsed time"/>
     </Grid>
 </Window>
